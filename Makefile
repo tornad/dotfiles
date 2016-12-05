@@ -93,6 +93,10 @@ lftp: brew /usr/local/bin/lftp
 /usr/local/bin/lftp:
 	brew install lftp
 
+shiftit: brew /usr/local/bin/shiftit
+/usr/local/bin/shiftit:
+	brew install Caskroom/cask/shiftit
+
 siege: brew /usr/local/bin/siege
 /usr/local/bin/siege:
 	brew install siege
