@@ -19,9 +19,9 @@ cmake: brew /usr/local/bin/cmake
 
 iterm2: font-sourcecode /Applications/iTerm.app
 /Applications/iTerm.app:
-	git clone https://github.com/Nasga/iterm2-borderless.git /tmp/iterm2
-	mv /tmp/iterm2/iTerm.app /Applications/
-	rm -rf /tmp/iterm2
+#	git clone https://github.com/tornad/iterm2-borderless.git /tmp/iterm2
+#	mv /tmp/iterm2/iTerm.app /Applications/
+#	rm -rf /tmp/iterm2
 
 font-sourcecode: ~/Library/Fonts/Sauce\ Code\ Powerline\ Light.otf
 ~/Library/Fonts/Sauce\ Code\ Powerline\ Light.otf:
