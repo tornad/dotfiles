@@ -172,14 +172,14 @@ let g:php_cs_fixer_config = "default"
 nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 
-autocmd BufWritePre *.php %s/\s\+$//ge
-autocmd BufWritePre *.yml %s/\s\+$//ge
-autocmd BufWritePre *.js %s/\s\+$//ge
-autocmd BufWritePre *.json %s/\s\+$//ge
-autocmd BufWritePre *.php %s/if ( /if (/ge
-autocmd BufWritePre *.php %s/if(/if (/ge
-autocmd BufWritePre *.php %s/,\$/, \$/ge
-autocmd BufWritePre *.php %s/foreach(/foreach (/ge
+"autocmd BufWritePre *.php %s/\s\+$//ge
+"autocmd BufWritePre *.yml %s/\s\+$//ge
+"autocmd BufWritePre *.js %s/\s\+$//ge
+"autocmd BufWritePre *.json %s/\s\+$//ge
+"autocmd BufWritePre *.php %s/if ( /if (/ge
+"autocmd BufWritePre *.php %s/if(/if (/ge
+"autocmd BufWritePre *.php %s/,\$/, \$/ge
+"autocmd BufWritePre *.php %s/foreach(/foreach (/ge
 " }}}
 " Plugin:matchit {{{
 runtime macros/matchit.vim      " Enable jump betwen tags
