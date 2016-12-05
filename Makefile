@@ -160,7 +160,7 @@ virtualbox: brew /usr/local/bin/VBoxHeadless
 
 packer: brew /usr/local/bin/packer
 /usr/local/bin/packer:
-	brew cask install packer
+	brew cask install homebrew/completions/packer-completion 
 
 java: brew
 	brew cask install java
@@ -176,7 +176,7 @@ jq: brew /usr/local/bin/jq
 /usr/local/bin/jq:
 	brew install jq
 
-vagrant: brew virtualbox ansible packer /usr/local/bin/vagrant
+vagrant: brew virtualbox ansible /usr/local/bin/vagrant
 /usr/local/bin/vagrant:
 	brew cask install vagrant
 
