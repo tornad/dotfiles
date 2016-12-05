@@ -453,7 +453,32 @@ wallpaper:
 	osascript -e "tell application \"System Events\" to set picture of every \
 		desktop to \"~/.dotfiles/wallpapers/2.png\""
 
+encfs: osxfuse
+	brew install homebrew/fuse/encfs
+
+osxfuse:
+	brew cask install osxfuse
+
+
 all: brew \
+	vim-config \
+	tmux-config \
+	node \
+	cmake \
+	highlight \
+	vim \
+	shiftit \
+	gpg \
+	cli-tools \
+	js-yaml \
+	jq \
+	jsonlint \
+	eslint \
+	sqlint \
+	google-chrome \
+
+
+seball: brew \
 	zsh \
 	watch \
 	osx \
