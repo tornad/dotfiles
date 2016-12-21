@@ -4,6 +4,10 @@ usage:
 	@echo brew - Install brew and brew-cask
 	@echo vagrant - Install vagrant, packer and plugins
 
+
+sshconfig:
+	cat ~/.ssh/config.d/* > ~/.ssh/config
+
 brew: /usr/local/bin/brew
 /usr/local/bin/brew:
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install > /tmp/brew-installer.sh
