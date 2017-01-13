@@ -27,6 +27,12 @@ iterm2: font-sourcecode /Applications/iTerm.app
 #	mv /tmp/iterm2/iTerm.app /Applications/
 #	rm -rf /tmp/iterm2
 
+
+wireshark: /usr/local/Caskroom/wireshark-chmodbpf/chmodbpf_only.xml
+/usr/local/Caskroom/wireshark-chmodbpf/chmodbpf_only.xml:
+	brew cask install wireshark-chmodbpf
+
+
 font-sourcecode: ~/Library/Fonts/Sauce\ Code\ Powerline\ Light.otf
 ~/Library/Fonts/Sauce\ Code\ Powerline\ Light.otf:
 	brew cask install font-source-code-pro-for-powerline
@@ -34,6 +40,10 @@ font-sourcecode: ~/Library/Fonts/Sauce\ Code\ Powerline\ Light.otf
 font-anonymous: ~/Library/Fonts/Anonymice\ Powerline.ttf
 ~/Library/Fonts/Anonymice\ Powerline.ttf:
 	brew cask install font-anonymous-pro-for-powerline
+
+diff-so-fancy: /usr/local/Cellar/diff-so-fancy/0.11.2/bin/diff-so-fancy
+/usr/local/Cellar/diff-so-fancy/0.11.2/bin/diff-so-fancy:
+	brew install diff-so-fancy
 
 mancy: ~/Applications/Mancy.app
 ~/Applications/Mancy.app:
@@ -100,6 +110,11 @@ lftp: brew /usr/local/bin/lftp
 shiftit: brew /usr/local/bin/shiftit
 /usr/local/bin/shiftit:
 	brew install Caskroom/cask/shiftit
+
+scw: brew /usr/local/bin/scw
+/usr/local/bin/scw:
+	brew tap scaleway/scaleway
+	brew install scaleway/scaleway/scw --HEAD
 
 siege: brew /usr/local/bin/siege
 /usr/local/bin/siege:
@@ -471,6 +486,7 @@ all: brew \
 	cmake \
 	highlight \
 	vim \
+	diff-so-fancy \
 	shiftit \
 	gpg \
 	cli-tools \
