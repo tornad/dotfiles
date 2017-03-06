@@ -21,6 +21,10 @@ cmake: brew /usr/local/bin/cmake
 /usr/local/bin/cmake:
 	brew install cmake
 
+iproute2mac: brew /usr/local/bin/ip
+/usr/local/bin/ip:
+	brew install iproute2mac
+
 iterm2: font-sourcecode /Applications/iTerm.app
 /Applications/iTerm.app:
 #	git clone https://github.com/tornad/iterm2-borderless.git /tmp/iterm2
