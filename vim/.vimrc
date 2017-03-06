@@ -59,6 +59,20 @@ set copyindent
 set smarttab
 set list listchars=tab:→\ ,trail:·,eol:↩,extends:»,precedes:«,nbsp:×
 set showbreak=…
+set paste
+
+let g:airline#extensions#branch#enabled = 1
+nnoremap <C-n> :bn<CR>
+nnoremap <C-p> :bp<CR>
+nnoremap <C-d> :bd<CR>
+
+
+" Uncomment the following to have Vim jump to the last position when                                                       
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
 
 " Indent with tabs
 vmap <Tab> >gv
@@ -184,11 +198,6 @@ nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 " Plugin:matchit {{{
 runtime macros/matchit.vim      " Enable jump betwen tags
 " }}}
-" Plugin:fzf {{{
-set rtp+=~/.fzf
-noremap <silent><C-p> :FZF<CR>
-cabbrev ls <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'Buffers' : 'ls')<CR>
-" }}}
 
 " Colors {{{
 set background=dark
@@ -198,4 +207,7 @@ color default
 set t_ZH=[3m
 set t_ZR=[23m
 highlight Comment cterm=italic
+" }}}
+" Plugin:Airline {{{
+let g:airline#extensions#tabline#enabled = 1
 " }}}
