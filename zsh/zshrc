@@ -11,3 +11,12 @@ source ~/.dotfiles/zsh/alias
 
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+###-tns-completion-start-###
+if [ -f /Users/rma/.tnsrc ]; then 
+    source /Users/rma/.tnsrc 
+fi
+###-tns-completion-end-###

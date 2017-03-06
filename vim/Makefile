@@ -13,7 +13,11 @@ all: \
   bundle/syntax-jsx \
   bundle/syntax-less \
   bundle/syntax-markdown \
+  bundle/vim-airline \
   bundle/viml-linter
+
+bundle/vim-airline:
+	git clone https://github.com/vim-airline/vim-airline $@
 
 bundle/youcompleteme:
 	git clone https://github.com/Valloric/YouCompleteMe.git $@
