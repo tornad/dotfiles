@@ -25,11 +25,9 @@ iproute2mac: brew /usr/local/bin/ip
 /usr/local/bin/ip:
 	brew install iproute2mac
 
-iterm2: font-sourcecode /Applications/iTerm.app
+iterm2: brew /Applications/iTerm.app
 /Applications/iTerm.app:
-#	git clone https://github.com/tornad/iterm2-borderless.git /tmp/iterm2
-#	mv /tmp/iterm2/iTerm.app /Applications/
-#	rm -rf /tmp/iterm2
+	brew cask install iterm2
 
 
 wireshark: /usr/local/Caskroom/wireshark-chmodbpf/chmodbpf_only.xml
@@ -239,7 +237,7 @@ neovim: brew /usr/local/bin/nvim
 ~/.config:
 	mkdir $@
 
-vim-config: ~/.vimrc ~/.config vim neovim
+vim-config: ~/.vimrc ~/.config vim
 ~/.vimrc:
 	ln -s ~/.dotfiles/vim ~/.vim
 	ln -s ~/.dotfiles/vim/.vimrc ~/.vimrc
@@ -465,17 +463,21 @@ osx:
 		TrackpadThreeFingerDrag -bool true
 	# dock size & autohidden dock
 	defaults write com.apple.dock tilesize -int 128
-	defaults write com.apple.dock autohide -bool true
+	defaults write com.apple.dock autohide -bool false 
 	# Enable full keyboard access for all controls
 	# (e.g. enable Tab in modal dialogs)
 	defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 	# Set a blazingly fast keyboard repeat rate
-	defaults write NSGlobalDomain KeyRepeat -int 0
+	defaults write InitialKeyRepeat -int 15 
+	defaults write KeyRepeat -int 0
 	# 14 days on ical
 	defaults write com.apple.iCal n\ days\ of\ week 14
 	# Finder
 	defaults write com.apple.finder NewWindowTarget -string "PfLo"
 	defaults write com.apple.finder NewWindowTargetPath -string "file://$(HOME)/Downloads/"
+	# Mouse speed
+	defaults write com.apple.scrollwheel.scaling -string "0.75"
+	defaults write com.apple.mouse.scaling -string "2"
 
 wallpaper:
 	# Set wallpaper
@@ -483,19 +485,20 @@ wallpaper:
 		desktop to \"~/.dotfiles/wallpapers/2.png\""
 
 encfs: osxfuse
-	brew install homebrew/fuse/encfs
+	brew install encfs
 
 osxfuse:
 	brew cask install osxfuse
 
 
 all: brew \
+	vim \
+	iterm2 \
 	vim-config \
 	tmux-config \
 	node \
 	cmake \
 	highlight \
-	vim \
 	diff-so-fancy \
 	shiftit \
 	gpg \
@@ -506,44 +509,7 @@ all: brew \
 	eslint \
 	sqlint \
 	google-chrome \
-
-
-seball: brew \
-	zsh \
-	watch \
 	osx \
-	vim-config \
-	slate-config \
-	tmux-config \
-	node \
-	cmake \
-	highlight \
-	tig \
-	vim \
-	gpg \
-	cli-tools \
-	ranger \
-	instant-markdown \
-	js-yaml \
-	the_silver_searcher \
-	mutt \
-	siege \
-	jsinspect \
-	david \
-	nsp \
-	jq \
-	jsonlint \
-	eslint \
-	sqlint \
-	retire \
-	slack \
-	pomo \
-	bower \
-	gulp \
-	cordova \
-	ionic \
-	mongodb \
-	mongohacker \
-	vagrant \
-	chrome \
-	postman
+	encfs \
+
+
