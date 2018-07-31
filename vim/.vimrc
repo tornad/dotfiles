@@ -166,7 +166,7 @@ let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol="✗"
 let g:syntastic_style_warning_symbol="⚑"
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-let g:syntastic_javascript_checkers = ['eslint', 'jscs']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_css_checkers = ['recess']
 let g:syntastic_less_checkers = ['recess']
 
@@ -210,4 +210,12 @@ highlight Comment cterm=italic
 " }}}
 " Plugin:Airline {{{
 let g:airline#extensions#tabline#enabled = 1
+" }}}
+
+" Plugin:EasyAlign {{{
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 " }}}

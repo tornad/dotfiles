@@ -14,7 +14,11 @@ all: \
   bundle/syntax-less \
   bundle/syntax-markdown \
   bundle/vim-airline \
-  bundle/viml-linter
+  bundle/viml-linter \
+  bundle/vim-easy-align
+
+bundle/vim-easy-align:
+	git clone https://github.com/junegunn/vim-easy-align $@
 
 bundle/vim-airline:
 	git clone https://github.com/vim-airline/vim-airline $@

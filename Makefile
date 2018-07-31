@@ -104,6 +104,9 @@ mtr: brew /usr/local/bin/mtr
 /usr/local/bin/mtr:
 	brew install mtr
 
+terraform:
+	brew install terraform
+
 travis:
 	gem install travis
 
@@ -290,6 +293,9 @@ redis: brew /usr/local/bin/redis-server
 mongodb: brew /usr/local/bin/mongo
 /usr/local/bin/mongo:
 	brew install mongodb
+
+visidata: brew /usr/local/Cellar/visidata/1.0/bin/vd
+	brew install saulpw/vd/visidata
 
 mongohacker: node /usr/local/lib/node_modules/mongo-hacker
 /usr/local/lib/node_modules/mongo-hacker:
