@@ -69,3 +69,4 @@ fd() {
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
+source ~/.dotfiles/zsh/agnoster_prompt.zsh

@@ -14,6 +14,7 @@ export FZF_DEFAULT_COMMAND='ag -l -g ""'
 
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export PATH=${PATH}:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
 
 ###-tns-completion-start-###
 if [ -f /Users/rma/.tnsrc ]; then 
