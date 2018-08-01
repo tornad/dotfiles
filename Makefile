@@ -59,6 +59,10 @@ imagemagick: brew /usr/local/bin/jpegtran
 /usr/local/bin/jpegtran:
 	brew install imagemagick
 
+git-config: ~/.gitconfig
+~/.gitconfig:
+	ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+
 gpg: brew /usr/local/bin/gpg-agent /usr/local/bin/gpg /usr/local/bin/pinentry-mac
 /usr/local/bin/gpg:
 	brew install gpg
