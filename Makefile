@@ -98,6 +98,12 @@ prezto: ~/.zprezto ~/.zpreztorc ~/.zlogin ~/.zlogout ~/.zprofile ~/.zshenv ~/.zs
 ~/.zpreztorc:
 	ln -s ~/.dotfiles/zsh/zpreztorc $@
 
+oh-my-zsh: ~/.oh-my-zsh
+~/.oh-my-zsh:
+	/usr/bin/curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > /tmp/oh-my-zsh-installer.sh
+	chmod +x /tmp/oh-my-zsh-installer.sh
+	/tmp/oh-my-zsh-installer.sh
+
 watch: brew /usr/local/bin/watch
 /usr/local/bin/watch:
 	brew install watch
@@ -499,7 +505,9 @@ all: brew \
 	vim \
 	iterm2 \
 	vim-config \
+	git-config \
 	tmux-config \
+	oh-my-zsh \
 	node \
 	cmake \
 	highlight \
@@ -513,7 +521,7 @@ all: brew \
 	eslint \
 	sqlint \
 	google-chrome \
+	slack \
 	osx \
 	encfs \
-
 
