@@ -21,6 +21,7 @@ cmake: brew /usr/local/bin/cmake
 /usr/local/bin/cmake:
 	brew install cmake
 
+ip: iproute2mac
 iproute2mac: brew /usr/local/bin/ip
 /usr/local/bin/ip:
 	brew install iproute2mac
@@ -205,6 +206,9 @@ $(HOME)/Applications/Slack.app:
 
 cloc: brew
 	brew install cloc
+
+insomnia:
+	brew cask install insomnia
 
 jq: brew /usr/local/bin/jq
 /usr/local/bin/jq:
@@ -439,6 +443,14 @@ cmus: brew /usr/local/bin/cmus
 /usr/local/bin/cmus:
 	brew install cmus
 
+rma-key: ~/.ssh/id_dsa
+~/.ssh/id_dsa: 
+	cp ~/Google\ Drive/rma-key/201805-rma-private-key-id_* ~/.ssh/
+	mv ~/.ssh/201805-rma-private-key-id_dsa ~/.ssh/id_dsa
+	mv ~/.ssh/201805-rma-private-key-id_dsa.pub ~/.ssh/id_dsa.pub
+	mv ~/.ssh/201805-rma-private-key-id_rsa ~/.ssh/id_rsa
+	mv ~/.ssh/201805-rma-private-key-id_rsa.pub ~/.ssh/id_rsa.pub
+
 osx:
 	# See secrets.blacktree.com
 	chsh -s /bin/zsh $(USER)
@@ -524,4 +536,7 @@ all: brew \
 	slack \
 	osx \
 	encfs \
+	wireshark \
+	keepassx \
+	ansible \
 
