@@ -81,6 +81,10 @@ ghi: brew /usr/local/bin/ghi
 /usr/local/bin/ghi:
 	brew install ghi
 
+htop: brew /usr/local/Cellar/htop/2.2.0/bin/htop
+/usr/local/Cellar/htop/2.2.0/htop:
+	brew install cask htop
+
 ranger: brew /usr/local/bin/ranger
 /usr/local/bin/ranger:
 	brew install ranger
@@ -537,6 +541,7 @@ all: brew \
 	osx \
 	encfs \
 	wireshark \
+	htop \
 	keepassx \
 	ansible \
 
