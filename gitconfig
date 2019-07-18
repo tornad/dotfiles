@@ -37,7 +37,7 @@
   default = matching
 
 [pull]
-  rebase = preserve
+	rebase = true
 
 [http]
   postBuffer = 524288000
