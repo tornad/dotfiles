@@ -35,6 +35,10 @@ wireshark: /usr/local/Caskroom/wireshark-chmodbpf/chmodbpf_only.xml
 /usr/local/Caskroom/wireshark-chmodbpf/chmodbpf_only.xml:
 	brew cask install wireshark-chmodbpf
 
+vscode: visual-studio-code 
+visual-studio-code: /usr/local/bin/code 	
+/usr/local/bin/code:
+	brew cask install visual-studio-code
 
 font-sourcecode: ~/Library/Fonts/Sauce\ Code\ Powerline\ Light.otf
 ~/Library/Fonts/Sauce\ Code\ Powerline\ Light.otf:
@@ -62,7 +66,7 @@ imagemagick: brew /usr/local/bin/jpegtran
 
 git-config: ~/.gitconfig
 ~/.gitconfig:
-	ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+	ln -s ~/dotfiles/gitconfig ~/.gitconfig
 
 gpg: brew /usr/local/bin/gpg-agent /usr/local/bin/gpg /usr/local/bin/pinentry-mac
 /usr/local/bin/gpg:
@@ -82,7 +86,7 @@ ghi: brew /usr/local/bin/ghi
 	brew install ghi
 
 htop: brew /usr/local/Cellar/htop/2.2.0/bin/htop
-/usr/local/Cellar/htop/2.2.0/htop:
+/usr/local/Cellar/htop/2.2.0/bin/htop:
 	brew install cask htop
 
 ranger: brew /usr/local/bin/ranger
@@ -99,9 +103,9 @@ prezto: ~/.zprezto ~/.zpreztorc ~/.zlogin ~/.zlogout ~/.zprofile ~/.zshenv ~/.zs
 ~/.zlogin ~/.zlogout ~/.zprofile ~/.zshenv:
 	ln -s ~/.zprezto/runcoms/$(subst .,,$(notdir $@)) $@
 ~/.zshrc:
-	ln -s ~/.dotfiles/zsh/zshrc $@
+	ln -s ~/dotfiles/zsh/zshrc $@
 ~/.zpreztorc:
-	ln -s ~/.dotfiles/zsh/zpreztorc $@
+	ln -s ~/dotfiles/zsh/zpreztorc $@
 
 oh-my-zsh: ~/.oh-my-zsh
 ~/.oh-my-zsh:
@@ -159,7 +163,7 @@ keycastr: brew /opt/homebrew-cask/Caskroom/keycastr/0.0.2-bezel/KeyCastr.app
 
 slate-config: slate ~/.slate.js
 ~/.slate.js:
-	ln -s ~/.dotfiles/slate/.slate.js ~/.slate.js
+	ln -s ~/dotfiles/slate/.slate.js ~/.slate.js
 
 skype: brew /opt/homebrew-cask/Caskroom/skype/latest/Skype.app
 /opt/homebrew-cask/Caskroom/skype/latest/Skype.app:
@@ -226,11 +230,9 @@ ansible: brew /usr/local/bin/ansible
 /usr/local/bin/ansible:
 	brew install ansible
 
-docker: brew virtualbox /usr/local/bin/docker
-/usr/local/bin/docker:
-	brew install docker
-	brew install docker-machine
-	docker-machine create --driver virtualbox dev
+docker: brew /usr/local/bin/docker
+/Applications/Docker.app:
+	brew cask install docker
 
 highlight: brew /usr/local/bin/highlight
 /usr/local/bin/highlight:
@@ -255,12 +257,14 @@ neovim: brew /usr/local/bin/nvim
 ~/.config:
 	mkdir $@
 
-vim-config: ~/.vimrc ~/.config vim
+vim-config: ~/.vim ~/.vimrc ~/.config vim
+~/.vim:
+	ln -s ~/dotfiles/vim ~/.vim
+
 ~/.vimrc:
-	ln -s ~/.dotfiles/vim ~/.vim
-	ln -s ~/.dotfiles/vim/.vimrc ~/.vimrc
-	ln -s ~/.vim ~/.config/nvim
-	ln -s ~/.vimrc ~/.config/nvim/init.vim
+	ln -s ~/dotfiles/vim/.vimrc ~/.vimrc
+	#ln -s ~/.vim ~/.config/nvim
+	#ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 instant-markdown: /usr/local/bin/instant-markdown-d
 /usr/local/bin/instant-markdown-d:
@@ -283,12 +287,12 @@ tmux: brew /usr/local/bin/tmux
 
 tmux-config: tmux ~/.tmux.conf
 ~/.tmux.conf:
-	ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
+	ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 tmuxinator: /usr/local/bin/tmuxinator
 /usr/local/bin/tmuxinator:
 	sudo gem install tmuxinator
-	ln -s ~/.dotfiles/tmuxinator ~/.tmuxinator
+	ln -s ~/dotfiles/tmuxinator ~/.tmuxinator
 
 the_silver_searcher: brew /usr/local/bin/ag
 /usr/local/bin/ag:
@@ -335,8 +339,8 @@ mutt: brew /usr/local/bin/mutt
 
 mutt-config: ~/.muttrc
 ~/.muttrc:
-	ln -s ~/.dotfiles/muttrc ~/.muttrc
-	ln -s ~/.dotfiles/mutt ~/.mutt
+	ln -s ~/dotfiles/muttrc ~/.muttrc
+	ln -s ~/dotfiles/mutt ~/.mutt
 
 fetchmail: brew /usr/local/bin/fetchmail
 /usr/local/bin/fetchmail:
@@ -372,7 +376,7 @@ node: /usr/local/bin/node
 jscs: node ~/.jscs.json
 ~/.jscs.json:
 	@npm install -g jscs
-	ln -s ~/.dotfiles/.jscs.json ~/.jscs.json
+	ln -s ~/dotfiles/.jscs.json ~/.jscs.json
 
 pomo: node /usr/local/bin/pomojs
 /usr/local/bin/pomojs:
@@ -449,7 +453,7 @@ cmus: brew /usr/local/bin/cmus
 
 rma-key: ~/.ssh/id_dsa
 ~/.ssh/id_dsa: 
-	cp ~/Google\ Drive/rma-key/201805-rma-private-key-id_* ~/.ssh/
+	cp ~/Google\ Drive\ File\ Stream/Mon\ Drive/rma-key/201805-rma-private-key-id_* ~/.ssh/
 	mv ~/.ssh/201805-rma-private-key-id_dsa ~/.ssh/id_dsa
 	mv ~/.ssh/201805-rma-private-key-id_dsa.pub ~/.ssh/id_dsa.pub
 	mv ~/.ssh/201805-rma-private-key-id_rsa ~/.ssh/id_rsa
@@ -508,7 +512,7 @@ osx:
 wallpaper:
 	# Set wallpaper
 	osascript -e "tell application \"System Events\" to set picture of every \
-		desktop to \"~/.dotfiles/wallpapers/2.png\""
+		desktop to \"~/dotfiles/wallpapers/2.png\""
 
 encfs: osxfuse
 	brew install encfs
@@ -516,32 +520,31 @@ encfs: osxfuse
 osxfuse:
 	brew cask install osxfuse
 
+all.config: vim-config \
+	git-config \
+	tmux-config \
+
+all.addon: diff-so-fancy \
+	shiftit \
+	cli-tools \
+	jq \
+	jsonlint \
+	eslint \
 
 all: brew \
 	vim \
 	iterm2 \
-	vim-config \
-	git-config \
-	tmux-config \
 	oh-my-zsh \
 	node \
 	cmake \
 	highlight \
-	diff-so-fancy \
-	shiftit \
-	gpg \
-	cli-tools \
-	js-yaml \
-	jq \
-	jsonlint \
-	eslint \
-	sqlint \
-	google-chrome \
 	slack \
 	osx \
 	encfs \
 	wireshark \
 	htop \
 	keepassx \
+	docker \
+	vscode \
 	ansible \
 
