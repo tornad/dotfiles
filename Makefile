@@ -89,23 +89,13 @@ htop: brew /usr/local/Cellar/htop/2.2.0/bin/htop
 /usr/local/Cellar/htop/2.2.0/bin/htop:
 	brew install cask htop
 
-ranger: brew /usr/local/bin/ranger
-/usr/local/bin/ranger:
-	brew install ranger
-
 youtube-dl: brew /usr/local/bin/youtube-dl
 /usr/local/bin/youtube-dl:
 	brew install youtube-dl
 
-prezto: ~/.zprezto ~/.zpreztorc ~/.zlogin ~/.zlogout ~/.zprofile ~/.zshenv ~/.zshrc
-~/.zprezto:
-	git clone --recursive https://github.com/sorin-ionescu/prezto.git $@
-~/.zlogin ~/.zlogout ~/.zprofile ~/.zshenv:
-	ln -s ~/.zprezto/runcoms/$(subst .,,$(notdir $@)) $@
+zshrc-config: ~/.zshrc
 ~/.zshrc:
 	ln -s ~/dotfiles/zsh/zshrc $@
-~/.zpreztorc:
-	ln -s ~/dotfiles/zsh/zpreztorc $@
 
 oh-my-zsh: ~/.oh-my-zsh
 ~/.oh-my-zsh:
@@ -140,50 +130,17 @@ scw: brew /usr/local/bin/scw
 	brew tap scaleway/scaleway
 	brew install scaleway/scaleway/scw --HEAD
 
-siege: brew /usr/local/bin/siege
-/usr/local/bin/siege:
-	brew install siege
-
-fzf: ~/.fzf
-~/.fzf:
-	git clone https://github.com/junegunn/fzf.git ~/.fzf
-	~/.fzf/install --no-update-rc
-
-slate: brew ~/Applications/Slate.app
-~/Applications/Slate.app:
-	brew cask install mattr-slate
-
-flux: brew ~/Applications/Flux.app
-~/Applications/Flux.app:
-	brew cask install flux
-
-keycastr: brew /opt/homebrew-cask/Caskroom/keycastr/0.0.2-bezel/KeyCastr.app
-/opt/homebrew-cask/Caskroom/keycastr/0.0.2-bezel/KeyCastr.app:
-	brew cask install keycastr
-
-slate-config: slate ~/.slate.js
-~/.slate.js:
-	ln -s ~/dotfiles/slate/.slate.js ~/.slate.js
-
 skype: brew /opt/homebrew-cask/Caskroom/skype/latest/Skype.app
 /opt/homebrew-cask/Caskroom/skype/latest/Skype.app:
 	brew cask install skype
 
 vlc: brew ~/Applications/VLC.app
-~/Applications/VLC.app:
+/Applications/VLC.app:
 	brew cask install vlc
 
 google-chrome: brew ~/Applications/Google Chrome.app
 ~/Applications/Google Chrome.app:
 	brew cask install google-chrome
-
-postman: brew ~/Applications/Postman.app
-~/Applications/Postman.app:
-	brew install Caskroom/cask/postman
-
-telephone: brew /opt/homebrew-cask/Caskroom/telephone/latest/telephone.app
-/opt/homebrew-cask/Caskroom/telephone/latest/telephone.app:
-	brew cask install telephone
 
 sequel-pro: brew /opt/homebrew-cask/Caskroom/sequel-pro/latest/sequel-pro.app
 /opt/homebrew-cask/Caskroom/sequel-pro/latest/sequel-pro.app:
@@ -523,6 +480,7 @@ osxfuse:
 all.config: vim-config \
 	git-config \
 	tmux-config \
+	zshrc-config \
 
 all.addon: diff-so-fancy \
 	shiftit \
@@ -547,4 +505,6 @@ all: brew \
 	docker \
 	vscode \
 	ansible \
-
+	watch \
+	mtr \
+	vlc \

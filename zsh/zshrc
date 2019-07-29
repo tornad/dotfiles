@@ -66,7 +66,10 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/dotfiles/zshalias
+source $HOME/dotfiles/zsh/alias
+
+PROMPT='${ret_status} %{$fg[cyan]%}$(pwd)%{$reset_color%} $(git_prompt_info)'
+
 
 # User configuration
 

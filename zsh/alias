@@ -48,33 +48,11 @@ alias .......='cd ../../../../../..'
 alias .6='.......'
 alias ........='cd ../../../../../../..'
 alias .7='........'
-alias h90='sudo shutdown -h +90'
-alias h120='sudo shutdown -h +120'
-alias pomo="pomojs --break 3 --quiet --log ~/.pomo.log --tmux "
-alias t5='pomo -w 5'
-alias t10='pomo -w 10'
-alias t15='pomo -w 15'
-alias t20='pomo -w 20'
-alias t30='pomo -w 30'
 alias vim='vim -w ~/.vimlog "$@"'
-alias v='vim'
-alias n='nvim'
-alias o='open'
-alias g='git'
-alias ncl='npm run cli -- '
-alias tm='tmux'
-alias ls='ls -G'
-alias :q='exit'
-command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu"
-command -v fasd > /dev/null && eval \
-  "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-wcomp)"
 alias hl='highlight \
   --out-format xterm256 \
   --style rdark \
   --line-numbers \
   --syntax'
 
-
-alias -g V='| vim -'
-alias -g G='| g'
-alias -g A='| ag'
+alias psdock="docker ps --format 'table {{.Names}}\t{{.Image}}\t{{.ID}}'"
