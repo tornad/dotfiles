@@ -449,7 +449,7 @@ osx:
 	defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad \
 		TrackpadThreeFingerDrag -bool true
 	# dock size & autohidden dock
-	defaults write com.apple.dock tilesize -int 128
+	defaults write com.apple.dock tilesize -int 64 
 	defaults write com.apple.dock autohide -bool false 
 	# Enable full keyboard access for all controls
 	# (e.g. enable Tab in modal dialogs)
