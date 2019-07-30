@@ -465,6 +465,8 @@ osx:
 	# Mouse speed
 	defaults write com.apple.scrollwheel.scaling -string "0.75"
 	defaults write com.apple.mouse.scaling -string "2"
+	# Dock
+	defaults write com.apple.dock "show-recents" -int 0
 
 wallpaper:
 	# Set wallpaper
