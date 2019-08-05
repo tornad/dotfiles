@@ -3,14 +3,12 @@ Dotfiles
 
 # Install
 ````bash
-curl -fsSL \
-  https://raw.githubusercontent.com/SebastienElet/dotfiles/master/install.sh | sh
-````
+xcode-select --install
 
-# Manual install
+````
 ````bash
 cd && \
-  git clone https://github.com/SebastienElet/dotfiles.git .dotfiles &&
+  git clone https://github.com/tornad/dotfiles.git dotfiles &&
   make all
 ````
 
