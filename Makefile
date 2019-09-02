@@ -52,6 +52,15 @@ diff-so-fancy: /usr/local/Cellar/diff-so-fancy/0.11.2/bin/diff-so-fancy
 /usr/local/Cellar/diff-so-fancy/0.11.2/bin/diff-so-fancy:
 	brew install diff-so-fancy
 
+
+ghostscript: 
+	brew install ghostscript
+
+imagemagick: ghostscript /usr/local/Cellar/imagemagick/
+	brew install imagemagick
+
+convert: imagemagick ghostscript
+
 mancy: ~/Applications/Mancy.app
 ~/Applications/Mancy.app:
 	brew cask install mancy
