@@ -272,6 +272,11 @@ memcached: brew /usr/local/bin/memcached
 /usr/local/bin/memcached:
 	brew install memcached
 
+mc: minio-mc 
+minio-mc: brew /usr/local/bin/mc
+/usr/local/bin/mc:
+	brew install minio-mc
+
 redis: brew /usr/local/bin/redis-server
 /usr/local/bin/redis-server:
 	brew install redis
@@ -517,5 +522,6 @@ all: brew \
 	vscode \
 	ansible \
 	watch \
+	mc \
 	mtr \
 	vlc \
