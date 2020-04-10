@@ -56,3 +56,4 @@ alias hl='highlight \
   --syntax'
 
 alias psdock="docker ps --format 'table {{.Names}}\t{{.Image}}\t{{.ID}}'"
+alias history="history -i"

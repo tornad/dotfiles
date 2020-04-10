@@ -70,7 +70,6 @@ source $HOME/dotfiles/zsh/alias
 
 PROMPT='${ret_status} %{$fg[cyan]%}$(pwd)%{$reset_color%} $(git_prompt_info)'
 
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
