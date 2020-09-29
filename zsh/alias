@@ -56,4 +56,6 @@ alias hl='highlight \
   --syntax'
 
 alias psdock="docker ps --format 'table {{.Names}}\t{{.Image}}\t{{.ID}}'"
+alias codei="code-insiders"
+alias ssho="ssh -o 'StrictHostKeyChecking=no'"
 alias history="history -i"

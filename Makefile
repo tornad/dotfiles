@@ -174,12 +174,13 @@ packer: brew /usr/local/bin/packer
 java: brew
 	brew cask install java
 
-slack: brew $(HOME)/Applications/Slack.app
-$(HOME)/Applications/Slack.app:
+slack: brew /Applications/Slack.app
+/Applications/Slack.app:
 	brew cask install slack
 
-cloc: brew
-	brew install cloc
+libreoffice: brew /Applications/LibreOffice.app
+/Applications/LibreOffice.app:
+	brew cask install libreoffice 
 
 insomnia:
 	brew cask install insomnia
@@ -187,10 +188,6 @@ insomnia:
 jq: brew /usr/local/bin/jq
 /usr/local/bin/jq:
 	brew install jq
-
-vagrant: brew virtualbox ansible /usr/local/bin/vagrant
-/usr/local/bin/vagrant:
-	brew cask install vagrant
 
 ansible: brew /usr/local/bin/ansible
 /usr/local/bin/ansible:
@@ -422,6 +419,15 @@ cmus: brew /usr/local/bin/cmus
 /usr/local/bin/cmus:
 	brew install cmus
 
+pip: /usr/local/bin/pip
+/usr/local/bin/pip: 
+	ln -s /usr/local/bin/pip3 /usr/local/bin/pip
+
+namecheap-api-cli: /usr/local/bin/namecheap-api-cli
+/usr/local/bin/namecheap-api-cli:
+	cd $$HOME && git clone https://github.com/Bemmu/PyNamecheap.git 	
+	ln -s $$HOME/PyNamecheap/namecheap-api-cli /usr/local/bin/namecheap-api-cli
+
 rma-key: ~/.ssh/id_dsa
 ~/.ssh/id_dsa: 
 	cp ~/Google\ Drive\ File\ Stream/Mon\ Drive/rma-key/201805-rma-private-key-id_* ~/.ssh/
@@ -475,7 +481,7 @@ osx:
 	defaults write com.apple.iCal n\ days\ of\ week 14
 	# Finder
 	defaults write com.apple.finder NewWindowTarget -string "PfLo"
-	defaults write com.apple.finder NewWindowTargetPath -string "file://$(HOME)/Downloads/"
+	defaults write com.apple.finder NewWindowTargetPath -string "file://$$(HOME)/Downloads/"
 	# Mouse speed
 	defaults write com.apple.scrollwheel.scaling -string "0.75"
 	defaults write com.apple.mouse.scaling -string "2"
@@ -498,7 +504,12 @@ all.config: vim-config \
 	tmux-config \
 	zshrc-config \
 
-all.addon: diff-so-fancy \
+all.addons: diff-so-fancy \
+	ansible \
+	vscode \
+	insomnia \
+	libreoffice \
+	sequel-pro \
 	shiftit \
 	cli-tools \
 	jq \
