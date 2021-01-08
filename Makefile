@@ -35,10 +35,15 @@ wireshark: /usr/local/Caskroom/wireshark-chmodbpf/chmodbpf_only.xml
 /usr/local/Caskroom/wireshark-chmodbpf/chmodbpf_only.xml:
 	brew cask install wireshark-chmodbpf
 
-vscode: visual-studio-code 
+vscode: visual-studio-code-insiders
+ 
 visual-studio-code: /usr/local/bin/code 	
 /usr/local/bin/code:
 	brew cask install visual-studio-code
+
+visual-studio-code-insiders: /usr/local/bin/codei 	
+/usr/local/bin/codei:
+	brew cask install visual-studio-code-insiders
 
 font-sourcecode: ~/Library/Fonts/Sauce\ Code\ Powerline\ Light.otf
 ~/Library/Fonts/Sauce\ Code\ Powerline\ Light.otf:
@@ -510,11 +515,13 @@ all.addons: diff-so-fancy \
 	insomnia \
 	libreoffice \
 	sequel-pro \
+	namecheap-api-cli \
 	shiftit \
 	cli-tools \
 	jq \
 	jsonlint \
 	eslint \
+	vlc \
 
 all: brew \
 	vim \
@@ -528,6 +535,7 @@ all: brew \
 	encfs \
 	wireshark \
 	htop \
+	ip \
 	keepassx \
 	docker \
 	vscode \
@@ -535,4 +543,3 @@ all: brew \
 	watch \
 	mc \
 	mtr \
-	vlc \
